@@ -51,7 +51,8 @@ public abstract class AbstractSimpleFragment extends SupportFragment {
     public void onDestroy() {
         super.onDestroy();
         RefWatcher refWatcher = WanAndroidApp.getRefWatcher(_mActivity);
-        refWatcher.watch(this);
+        if(refWatcher != null)
+            refWatcher.watch(this);
     }
 
     @Override
